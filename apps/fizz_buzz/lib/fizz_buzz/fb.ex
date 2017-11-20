@@ -11,12 +11,14 @@ defmodule FizzBuzz.Fb do
   def word(_, 0, _), do: IO.inspect "Buzz"
   def word(_, _, n), do: IO.inspect n
 
-  def start(num) do
+  def start(num) when num > 0 and is_number(num) do
     fizzbuzz(Enum.to_list 1..num)
   end
+
+  def start(_), do: IO.inspect "Please enter a valid number!"
 end
 
 alias FizzBuzz.Fb
 
-Fb.start(100)
+IO.inspect Fb.start(100)
 

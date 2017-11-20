@@ -6,9 +6,9 @@ defmodule Fibonacci.Fib do
     fib_it(n - 1) + fib_it(n - 2)
   end
 
-  def fib_it(_), do: IO.puts "Not a valid Fib!"
+  def fib_it(_), do: IO.inspect "Not a valid Fib!"
 end
 
 alias Fibonacci.Fib
 
-IO.puts Fib.fib_it(5)
+IO.inspect Fib.fib_it(5)

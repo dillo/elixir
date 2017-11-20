@@ -1,8 +1,20 @@
 defmodule FibonacciTest do
   use ExUnit.Case
-  doctest Fibonacci
+  alias Fibonacci.Fib
 
-  test "greets the world" do
-    assert Fibonacci.hello() == :world
+  test "when 0 it returns a 0" do
+    assert Fib.fib_it(0) == 0
+  end
+
+  test "when 1 it returns a 1" do
+    assert Fib.fib_it(1) == 1
+  end
+
+  test "when not a vaild entry" do
+    assert Fib.fib_it("abc") == "Not a valid Fib!"
+  end
+
+  test "when a suitable entry" do
+    assert Fib.fib_it(8) == 21
   end
 end
